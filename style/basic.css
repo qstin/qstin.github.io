@@ -1,0 +1,26 @@
+body {
+	font-family: sans-serif;
+}
+a {
+	font-family: sans-serif; color: #1454D5;
+}
+h1, h2, h3 {
+	text-align: inherit;
+	color: black;
+}
+.key {
+	color:black;
+}
+.realText {
+	text-align: justify;
+	margin-right: inherit;
+	margin-left: inherit;
+	max-width: 500px;
+	min-width: 100px;
+	height: inherit;
+	min-height: inherit;
+}
+.center {
+	text-align: inherit;
+
+}
