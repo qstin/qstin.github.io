@@ -6,7 +6,7 @@ a {
 }
 h1, h2, h3 {
 	text-align: inherit;
-	color: black;
+	color: DarkGrey;
 }
 .key {
 	color:black;
