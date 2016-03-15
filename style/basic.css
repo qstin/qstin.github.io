@@ -1,9 +1,9 @@
 @font-face{
-    font-family: code;
-    src: url('fonts/CodeLight.otf')
+    font-family: Roboto;
+    src: url('fonts/Roboto/Roboto-BoldCondensed.ttf')
 }
 body {
-	font-family: code;
+	font-family: Roboto;
 }
 a {
 	color: #1454D5;
