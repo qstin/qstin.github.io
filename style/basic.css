@@ -1,16 +1,29 @@
+
 @font-face{
     font-family: Roboto;
     src: url('fonts/roboto/Roboto-BoldCondensed.ttf')
+    font-weight: bold;
 }
+
+@font-face{
+    font-family: Roboto;
+    src: url('fonts/roboto/Roboto-Regular.ttf')
+    font-weight: normal;
+}
+
 body {
 	font-family: Roboto;
+	margin: 50px;
+	font-weight: normal;
 }
 a {
-	color: #238b45;
+	color: #00a55e;
 }
 h1, h2, h3 {
 	text-align: inherit;
 	color: black;
+	font-weight: bold;
+	
 }
 .key {
 	color:#252525;
