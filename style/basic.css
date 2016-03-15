@@ -1,8 +1,12 @@
+@font-face{
+    font-family: code;
+    src: url('fonts/CodeLight.otf')
+}
 body {
-	font-family: sans-serif;
+	font-family: code;
 }
 a {
-	font-family: sans-serif; color: #1454D5;
+	color: #1454D5;
 }
 h1, h2, h3 {
 	text-align: inherit;
@@ -24,3 +28,6 @@ h1, h2, h3 {
 	text-align: inherit;
 
 }
+
+
+
