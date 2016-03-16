@@ -1,7 +1,7 @@
    
-    ************************************************************************ 
-    #--------ASU Computer Science Classes for Journalists(sort of)---------#
-    ************************************************************************
+    **************************************************************************** 
+    #--------ASU Computer Science Classes for Journalists(sort of)-------------#
+    ****************************************************************************
 
         By Justin Price
         
@@ -46,10 +46,11 @@
               stat juices flowing.
 
         7. CSE 205 - Object-oriented Programming with Java
-            - The advanced follow-up to CSE 110. This class really nails down
-              important programming practices and principles. Java is diffi-
-              cult and almost useless to journalists because of its complexity,
-              but knowing it makes learning other languages much simpler.
+            - The advanced follow-up to CSE 110. This class really nails 
+              down important programming practices and principles. Java is 
+              difficult and almost useless to journalists because of its 
+              complexity, but knowing it makes learning other languages much
+              simpler.
 
         8. AME 220 - Programming for the Web
             - While the concepts covered in this class are introductory, I'd
@@ -62,9 +63,9 @@
               arguably the best for data-analysis. Keep in mind though, this 
               class is only offered online, so be able to self-motivate.
               (CSE 110 is a pre-req)  
-        ************************************************************************ 
-        #----------------------------------------------------------------------#
-        ************************************************************************
+    **************************************************************************** 
+    #--------------------------------------------------------------------------#
+    ****************************************************************************
 
             Contact me if you have questions:
             M: 480-622-2846
