@@ -53,9 +53,8 @@
 
         8. AME 220 - Programming for the Web
             - While the concepts covered in this class are introductory, I'd
-              recommend having some prior experience from other programming 
-              classes. It covers front-end web development using HTML, CSS and
-              javascript.
+              recommend taking several classes beforehand. You'll learn front-
+              end web development using HTML, CSS and javascript.
         
         9. GIS 321 - Programming for GIS
             - Another stats-heavy class (yay!). Offers an excellent
