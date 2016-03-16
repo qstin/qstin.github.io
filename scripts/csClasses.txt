@@ -1,3 +1,4 @@
+   
     ************************************************************************ 
     #--------ASU Computer Science Classes for Journalists(sort of)---------#
     ************************************************************************
@@ -37,37 +38,35 @@
             - Ignore the business school jargon used to describe this class
               on ASU's website. You'll learn to take control of the command 
               line by writing powerful commands, functions and scripts. Also,
-              the professors is one of the coolest nerds you'll ever meet.
+              the professor is one of the coolest nerds you'll ever meet.
         
         6. GIS 470 - Statistics for Geographers
             - This class also uses R, but focuses less on visualization and 
-              more on advanced statistical concepts. Take this to keep the stat 
-              juices flowing.
+              more on advanced statistical concepts. Take this to keep the 
+              stat juices flowing.
 
         7. CSE 205 - Object-oriented Programming with Java
             - The advanced follow-up to CSE 110. This class really nails down
-              important programming practices and principles. Java is difficult 
-              and almost useless to journalists because of its complexity, but 
-              knowing it makes learning other languages much simpler.
+              important programming practices and principles. Java is diffi-
+              cult and almost useless to journalists because of its complexity,
+              but knowing it makes learning other languages much simpler.
 
         8. AME 220 - Programming for the Web
-            - While the concepts covered in this class are introductory, the 
-              course structure and professor don't facilitate the best 
-              introductory environment. Take this after several programming 
+            - While the concepts covered in this class are introductory, I'd
+              recommend having some prior experience from other programming 
               classes. It covers front-end web development using HTML, CSS and
               javascript.
         
         9. GIS 321 - Programming for GIS
             - Another stats-heavy class (yay!). Offers an excellent
               introduction to GIT and uses the Python programming language,
-              which is the best language for data-analysis. Keep in mind though,
-              this class is only offered online, so be familiar with programming.
+              arguably the best for data-analysis. Keep in mind though, this 
+              class is only offered online, so be able to self-motivate.
               (CSE 110 is a pre-req)  
+        ************************************************************************ 
+        #----------------------------------------------------------------------#
+        ************************************************************************
 
-        --------------------------------------------------------------------------
-        A side note: Go to NICAR if you can afford it. 
-        -------------------------------------------------------------------------- 
-
-        Contact me if you have questions:
-        M: 480-622-2846
-        E: justinjprice@gmail.com
+            Contact me if you have questions:
+            M: 480-622-2846
+            E: justinjprice@gmail.com
