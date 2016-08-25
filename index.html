@@ -2,61 +2,77 @@
 <html>
 <head>
 <title>Justin Price</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" >
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="style/basic.css">
+<meta http-equiv='content-type' content='text/html; charset=utf-8' >
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link href='css/bootstrap.min.css' rel='stylesheet'>  
+<link rel='stylesheet' type='text/css' href='css/basic.css'>
+<link rel='stylesheet' href='css/animate.css'>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<script src='js/wow.min.js'></script>
+<script>
+    new WOW().init();
+    $(document).ready(function() {
+        $('.Republic').click(function() {
+          $('#box').html('')
+            .html("<div class='leftText wow fadeInUp animated' style='isibility: visible; animation-name: fadeInUp;' name='box'><p><strong>Arizona Republic</strong></p><p><a href='http://www.azcentral.com/story/news/local/phoenix/2014/12/12/phoenix-cold-case-unit-abrk/20311045/' target='_blank'>Phoenix unit tackles decades-old unsolved murders</a></p><p><a href='http://www.usatoday.com/story/news/nation/2014/12/09/unarmed-black-man-killed-phoenix/20134503/' target='_blank'>Cop to dead man's 9-year-old daughter: 'I'm sorry'</a></p><p><a href='http://www.usatoday.com/story/news/nation/2014/10/07/hot-car-death/16844995/' target='_blank'>28th child of the year dies in hot car</a></p><p><a href='http://www.azcentral.com/story/news/local/phoenix/2014/09/09/few-at-american-red-cross-shelters/15317675/' target='_blank'>Few people staying at Red Cross shelters</a></p><p><a href='http://www.azcentral.com/story/news/local/southwest-valley/2014/08/22/goodyear-mother-daughter-child-drowning-abrk/14446031/' target='_blank'>Records detail Goodyear mom's attempt to drown girl, 1</a></p><p><a href='http://www.azcentral.com/story/news/local/phoenix/2014/03/27/phoenix-cold-case-woman-motel-victim-of-serial-killer/6959353/' target='_blank'>Phoenix cold cases</a></p><p><a href='http://www.azcentral.com/community/phoenix/articles/20140222phoenix-protesters-decry-deportations.html' target='_blank'>Protesters decry deportations in Phoenix</a></p><p><a href='http://www.usatoday.com/story/news/nation/2013/08/30/boy-dies-hot-car/2749153/'target='_blank'>Police: Child dies in car while father smoked pot outside</a></p><p><a href='http://www.azcentral.com/story/news/local/phoenix/2014/03/30/arizona-spelling-bee-higley-student-wins/7076103/' target='_blank'>Higley seventh-grader wins Arizona spelling bee</a></p><p><a href='http://www.azcentral.com/story/news/local/glendale/2014/03/16/glendale-air-show-big-crowds/6482671/' target='_blank'>Glendale air show wows big crowds</a></p><p><a href='http://www.azcentral.com/story/news/local/phoenix/2014/03/10/flying-fear-phoenix-pilot-overcomes/6247091/' target='_blank'>Retired pilot's free classes help with fear of flying</a></h4><p><a href='http://www.azcentral.com/story/entertainment/events/2014/04/21/pats-run-live-coverage/7974171/' target='_blank'>More runners than ever take part in Pat's Run</a></p><p><a href='http://www.azcentral.com/search/justin%20price/' target='_blank'>More...</a></p></div>");
+
+        })
+        $('.resume').click(function(){
+          $('#box').html('')
+            .html("<div class='leftText wow fadeInUp animated' style='isibility: visible; animation-name: fadeInUp;' name='box'><p><strong>experience</strong></p><p>2016: Arizona Center for Investigative Reporting</p><p>2013-2015: The Arizona Republic</p><p>2014: The National Journalism Center</p><p><strong>education</strong></p><p>Arizona State University</p><p>Major: Journalism</p><p>Certificate in Computational Journalism</p><p><strong>skills</strong></p><p>Programming: Python, Javascript, D3, UNIX, R, Java</p><p>GIS: QGIS, Python spatial analytics, mapping with D3</p><p>Research methods: APIs, web-scraping, analysis with Pandas and Numpy.</p></div>");
+        })
+        $('.azcir').click(function() {
+          $('#box').html('')
+            .html("<div class='leftText wow fadeInUp animated' style='isibility: visible; animation-name: fadeInUp;' name='box'><p><strong>Arizona Center for Investigative Reporting</strong></p><p><a href='http://azcir.org/2015/11/13/lobbying-records-only-disclose-recipient-for-1-out-of-every-8-spent/' target='_blank'>Lobbying records only disclose recipient for $1 out of every $8 spent</a></p><p><a href='http://azcir.org/az-model-legislation/' target='_blank'>Arizona lawmakers outsource legislative ideas</a></p></div>");
+        })
+        $('.d3').click(function() {
+          $('#box').html('')
+            .html("<div class='leftText wow fadeInUp animated' style='isibility: visible; animation-name: fadeInUp;' name='box'><iframe style='border-width:0px;'width='100%' height='800px' src='http://azcir.github.io/lidchart/'></ifram></div>");
+        })
+      });;
+</script>
+
+
 </head>
-<body style="margin:50px">
-<div class="container text-center" id="error">
-
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="main-icon text-success"><span class="uxicon uxicon-clock-refresh"></span></div>
+<body style='margin:50px'>
+  <div class='row'>
+    <div class='col-xs-12 col-md-8 rborder'>
       <!--<h1>Justin Price</h1>-->
-      <div>
-          <img src="images/jp.png" style='width:200px;'alt="JUSTINPRICE">
-      </div>
-      
-
-      <div class="realText"><p> 
+      <img src='images/jp.png' style='width:200px;'alt='JUSTINPRICE'>
+      <div class='realText'><p> 
         I'm a recent journalism graduate of Arizona State University. My time in school
         has been spent figuring out how to use code and numbers to tell
-        stories.</p>
-        <p> Here's some proof: <a href="/scripts/csClasses.txt">click here </p>
-        <p><a href="images/Price_Resume.pdf">resume</a></p>
+        stories.
+        </p>
+        <p><a class='resume' href='#resume'>Resume</a></p>
       </div>
       <p><strong>reporting</strong></p>
-      <div class="center">
-      <p>Arizona Center for Investigative Reporting:    <a
-          href="http://azcir.org/2015/11/13/lobbying-records-only-disclose-recipient-for-1-out-of-every-8-spent/">lobbying
-
-      </a> | <a href="http://azcir.org/az-model-legislation/">model
-          legislation</a></p>
-      <p><a href="/scripts/azr.html"> Arizona Republic</a></p>
-      <p><a href="http://www.theguardian.com/us-news/2015/may/30/phoenix-anti-islam-protest-draw-muhammad-contest"> The Guardian</a></p>
+      <p><a class='azcir' href='#box'>Arizona Center for Investigative Reporting</a></p>
+      <p><a class='Republic' href='#Republic'> Arizona Republic</a></p>
+      <p><a href='http://www.theguardian.com/us-news/2015/may/30/phoenix-anti-islam-protest-draw-muhammad-contest' target='_blank'> The Guardian</a></p>
       <p><strong>data visualization</strong></p>
-      <p>Model legislation<a href="http://azcir.github.io/lidchart/"> with
+      <p>Model legislation<a href='#box'class='d3'> with
           D3</a></p>
-      <p>Murder rates <a href="images/FinalProject_Price.pdf">with ArcGIS and
+      <p>Murder rates <a href='images/FinalProject_Price.pdf'>with ArcGIS and
           Illustrator</a></p>
-      <p>UCR data <a href="images/FinalProj-Price.pdf">with R and Illustrator</a></p>
-      </div>
+      <p>UCR data <a href='images/FinalProj-Price.pdf'>with R and Illustrator</a></p>
       <p><strong>contact</strong></p>
       <p>480-622-2846</p>
-    <p>justinjeffreyp@gmail.com</p>
-    <p><a href="https://twitter.com/justinJprice"
-        target="_blank">@justinJprice</a></p>
-    <p><a href="https://twitter.com/AZDarkMoneyBot"
-            target="_blank">@AZDarkMoneyBot</a></p>
-    <p><a href="https://github.com/qstin">
-            <img src="images/GitHub-Mark-64px.png" alt="GitHub">
-    </a></p>
+      <p>justinjeffreyp@gmail.com</p>
+      <p><a href='https://twitter.com/justinJprice'
+        target='_blank'>@justinJprice</a></p>
+      <p><a href='https://twitter.com/AZDarkMoneyBot'
+        target='_blank'>@AZDarkMoneyBot</a></p>
+      <p><a href='https://github.com/qstin'>
+        <img src='images/GitHub-Mark-64px.png' alt='GitHub'></a></p>
     </div>
-  </div>
+    <div id='box' class='col-xs-6 col-md-4'>
+    </div>
+    </div>
 
-</div>
+  </div>
 
 </body>
 </html>

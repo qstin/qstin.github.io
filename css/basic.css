@@ -40,4 +40,15 @@ strong{
 }
 
 
+.leftText {
+        visibility: hidden;
+}
 
+.rborder {
+        border-right: thick solid #efefef;
+}
+
+.subhead {
+        font-size: 12pt;
+        font-weight: 700;
+}
