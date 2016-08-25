@@ -1,0 +1,120 @@
+html {font-family: 'Open Sans';}
+
+body{margin-left: 20px}
+
+h1{margin-left:20px}
+
+a:link{
+  color: black;
+}
+a:visited{
+  color:black;
+}
+/* Our stylesheet */
+.axis path,
+.axis line {
+  fill: none;
+}
+
+.y.axis path { display: none; }
+
+.y.axis line {
+  stroke: #ccc;
+  stroke-width: 1px;
+}
+
+.axis text {
+  font-family: 'helvetica', sans-serif;
+  fill: #777;
+  font-size: 12px;
+}
+
+.dot circle.dragging {
+  fill: red;
+  stroke: brown;
+}
+
+.axis line {
+  fill: none;
+  stroke: #ddd;
+  vector-effect: non-scaling-stroke;
+}
+svg.leg{
+  height: 76px;
+  margin-top: -60px;
+}
+/* dot colors */
+circle.leg{
+  fill: none;
+  stroke-width: 1px;
+  stroke: black;
+
+}
+
+.R { fill: rgba(239,59,44,.6); opacity: 15;}
+.D { fill: rgba(54,144,192,.6); opacity: 15; }
+
+circle.dot { stroke-width: 1px; stroke: rgba(255,255,255,.25); }
+
+circle.active { stroke: rgba(0,0,0,.8); }
+
+/* Tooltip styles */
+#tooltip {
+	position: absolute;
+	z-index: 10;
+	visibility: hidden;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, .8);
+  border: 1px solid #777;
+  pointer-events: none;
+  font-family: 'helvetica', sans-serif;
+  font-size: 14px;
+}
+
+#tooltip p { margin: 0 0 5px; }
+
+#tooltip p:first-child {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#tooltip span { font-weight: bold; }
+
+.key p {
+  display: inline;
+  margin-right:20px;
+}
+
+.key span.item {
+  display:inline-block;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+p.description{
+  margin-left: 20px;
+  max-width: 1000px;
+}
+span.item.Republican { background-color: #ef8a62; }
+span.item.Democrat { background-color: #67a9cf; }
+
+.button{
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+.House.button.active{ background-color: #999999; }
+.House.button{ border: 2px solid #999999; }
+
+.Senate.button.active{ background-color: #999999; }
+.Senate.button{ border: 2px solid #999999; }
+
+rect.legend-box{fill: rgba(255,255,255,.5);}
+circle.scale{color: 'white';}
