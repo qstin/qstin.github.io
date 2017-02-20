@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  </head>
+  <body>
+  <div class="ct-chart ct-golden-section"></div>
+  <script>
+      var data = {
+        labels: ['Primary 2014', 'General 2014', 'Primary 2016', 'General 2016'],
+            series: [
+            [15, 151, 378, 148],
+            [70, 281, 366, 306]
+        ]
+        };
+
+        var options = {
+        seriesBarDistance: 15
+        };
+
+        var responsiveOptions = [
+        ['screen and (min-width: 641px) and (max-width: 1024px)', {
+            seriesBarDistance: 10,
+            axisX: {
+            labelInterpolationFnc: function (value) {
+                return value;
+            }
+            }
+        }],
+        ['screen and (max-width: 640px)', {
+            seriesBarDistance: 5,
+            axisX: {
+            labelInterpolationFnc: function (value) {
+                return value[0];
+            }
+            }
+        }]
+        ];
+
+    new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
+        </script>
+  </body>
+</html>
