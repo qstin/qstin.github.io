@@ -67,7 +67,7 @@
                   opacity: 1,
                   color: 'white',
                   dashArray: '',
-                  fillOpacity: 1
+                  fillOpacity: .4
                   };
               }
             L.geoJson(precinctData, {style: style}).addTo(mymap);
@@ -79,7 +79,7 @@
                   weight: 3,
                   color: 'black',
                   dashArray: '',
-                  fillOpacity: 1.5
+                  fillOpacity: .9
               });
 
               if (!L.Browser.ie && !L.Browser.opera) {
@@ -93,7 +93,8 @@
             function onEachFeature(feature, layer) {
               layer.on({
                   mouseover: highlightFeature,
-                  mouseout: resetHighlight
+                  mouseout: resetHighlight,
+                  click: highlightFeature
                   });
               }
               geojson = L.geoJson(precinctData, {
