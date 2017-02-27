@@ -8,13 +8,14 @@
         body {
             padding-left: 0px;
             padding-right: 0px;
-            margin: 0;
+        margin: 0;
             height: 100%;
-            }   
- 
+        }
+        
         html {
             height: 100%;
-            }
+        }
+ 
           #mapid{ 
               height:100%; 
               width: 100%;
@@ -24,7 +25,7 @@
               height: 98%;
               width: 100%;
               z-index: 1;
-              }
+                }
           path.leaflet-clickable{stroke-width: .7;}
           .info {
               padding: 6px 8px;
@@ -50,31 +51,6 @@
               margin-right: 8px;
               opacity: 0.7;
           }
-          @media (max-width: 625px) {
-              .info {
-              padding: 6px 8px;
-              font: 14px/16px Arial, Helvetica, sans-serif;
-              background: white;
-              background: rgba(255,255,255,1);
-              box-shadow: 0 0 0px rgba(0,0,0,0.2);
-              border-radius: 5px;
-              max-width: 300px;
-          }
-          .info h4 {
-              margin: 0 0 5px;
-              color: #555;
-          }
-          .legend {
-              line-height: 18px;
-              color: #555;
-          }
-          .legend i {
-              width: 1px;
-              height: 18px;
-              float: left;
-              margin-right: 8px;
-              opacity: 0.7;
-          }}
 
         </style>
     </head>
@@ -153,7 +129,7 @@
 
               };
               info.update = function (props) {
-                this._div.innerHTML = '<h4>Bernard did best where he won the mail-in vote</h4>' + (props ?
+                this._div.innerHTML = '<h4>Percent of mail-in votes cast for Mack Bernard by precinct</h4>' + (props ?
                      'Precinct: <b>' + props.PRECINCT + '</b>' +
                      '<br />Mail-in votes cast: <b>' + props.mbvbm_ballots_cast + '</b>' +
                      '<br />Mail-in votes for Bernard: <b>' + props.mbvbm_Bernard + '</b>' +
@@ -163,7 +139,7 @@
 
               };
               info.addTo(mymap);
-              var legend = L.control({position: 'topright'});
+              var legend = L.control({position: 'bottomright'});
 
               legend.onAdd = function (mymap) {
 
