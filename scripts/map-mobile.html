@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+        <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css'
+        rel='stylesheet' />
+        <style>
+        body {
+            padding-left: 0px;
+            padding-right: 0px;
+            margin: 0;
+            height: 100%;
+        }
+        
+        html {
+            height: 100%;
+        }
+ 
+          #mapid{ 
+              height:100%; 
+              width: 100%;
+              position: absolute;
+              float: left;
+              top: 1%;
+              height: 98%;
+              width: 100%;
+              z-index: 1;
+                }
+          path.leaflet-clickable{stroke-width: .7;}
+          @media (max-width: 625px) {
+            .info {
+                padding: 6px 8px;
+                font: 16px/18px Arial, Helvetica, sans-serif;
+                background: white;
+                background: rgba(255,255,255,1);
+                box-shadow: 0 0 0px rgba(0,0,0,0.2);
+                border-radius: 5px;
+                max-width: 300px;
+            }
+            .info h4 {
+                margin: 0 0 1rem;
+                color: #555;
+                font-size: 3rem;
+            }
+            .legend {
+                line-height: 20px;
+                color: #555;
+            }
+            .legend i {
+                width: 18px;
+                height: 18px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+            }}
+            .info {
+                padding: 6px 8px;
+                font: 16px/18px Arial, Helvetica, sans-serif;
+                background: white;
+                background: rgba(255,255,255,1);
+                box-shadow: 0 0 0px rgba(0,0,0,0.2);
+                border-radius: 5px;
+                max-width: 300px;
+            }
+            .info h4 {
+                margin: 0 0 5px;
+                color: #555;
+                font-size: 20px;
+            }
+            .legend {
+                line-height: 20px;
+                color: #555;
+            }
+            .legend i {
+                width: 18px;
+                height: 18px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+            }
+
+        </style>
+    </head>
+    <body>
+     <div id="mapid">MapID</div>
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+        <script src="mb-geo4.js"></script>
+        <script type="text/javascript">
+
+            var mymap = L.map('mapid').setView([26.6305, -80.0667],13);
+            var positron = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+              attribution: 'Justin Price &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+              maxZoom: 13,
+              id: 'qstin.jhebfo41',
+              accessToken: 'pk.eyJ1IjoicXN0aW4iLCJhIjoiWUtYVWpZcyJ9.wum0qrqdX6ASx0OMIg7RLg'
+              /* ' pk.eyJ1IjoicGJwb3N0IiwiYSI6ImNpcDhyZDVmMjAxZDd0Y25ydW5xMDNnNGMifQ.R93usutIGqXjUL1IgrDkyw'*/
+            }).addTo(mymap);
+            L.geoJson(precinctData).addTo(mymap);
+            function getColor(d) {
+              return d > 77.0 ? '#b2182b' :
+                     d > 61.0 ? '#ef8a62' :
+                     d > 50.0 ? '#fddbc7' :
+                     d > 31.0 ? '#e0e0e0' :
+                     d > 15.0 ? '#999999' :
+                                '#4d4d4d';//below the above number
+              }
+              
+            function style(feature) {
+              return {
+                  fillColor: getColor(feature.properties.mbvbm_percent_for_Bernard),
+                  weight: 1,
+                  opacity: 1,
+                  color: 'white',
+                  dashArray: '',
+                  fillOpacity: .4
+                  };
+              }
+            L.geoJson(precinctData, {style: style}).addTo(mymap);
+
+            function highlightFeature(e) {
+              var layer = e.target;
+              info.update(layer.feature.properties);
+              layer.setStyle({
+                  weight: 3,
+                  color: 'black',
+                  dashArray: '',
+                  fillOpacity: .5
+              });
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent()
+            }
+
+              if (!L.Browser.ie && !L.Browser.opera) {
+                  layer.bringToFront();
+                  }
+              }
+            function resetHighlight(e) {
+              geojson.resetStyle(e.target);
+              info.update();
+              }
+            function onEachFeature(feature, layer) {
+              layer.on({
+                  mouseover: highlightFeature,
+                  mouseout: resetHighlight,
+                  click: highlightFeature
+                  });
+              }
+              geojson = L.geoJson(precinctData, {
+                  style: style,
+                  onEachFeature: onEachFeature
+              }).addTo(mymap);
+              
+              var info = L.control();
+
+              info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+
+              };
+              info.update = function (props) {
+                this._div.innerHTML = '<h4>Percent of mail-in votes cast for Mack Bernard by precinct</h4>' + (props ?
+                     'Precinct: <b>' + props.PRECINCT + '</b>' +
+                     '<br />Mail-in votes cast: <b>' + props.mbvbm_ballots_cast + '</b>' +
+                     '<br />Mail-in votes for Bernard: <b>' + props.mbvbm_Bernard + '</b>' +
+                     '<br />Percent for Bernard: <b>' + parseFloat(props.mbvbm_percent_for_Bernard.toFixed(2)) + '</b>' +
+                     '<br />Outcome: ' + '<b>Bernard ' + props.mbvbm_outcome + '</b>' 
+                     : "Mack Bernard campaigned heavily in the sourthern parts of his district, often entering voter's homes to assist them as they marked their ballots." + "</br></br>" + "Hover over precincts");
+
+              };
+              info.addTo(mymap);
+              var legend = L.control({position: 'bottomright'});
+
+              legend.onAdd = function (mymap) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [0, 15, 31, 50, 61, 77],
+                    labels = [];
+
+                // loop through our density intervals and generate a label with a colored square for each interval
+                div.innerHTML += '<h4>Mail-in vote share</h4>'
+                for (var i = 0; i < grades.length; i++) {
+                    div.innerHTML += 
+                        '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '%<br>' : '+');
+                }
+
+                return div;
+              };
+
+            legend.addTo(mymap);
+
+
+                </script>
+
+
+   </body>
+</html>
