@@ -63,31 +63,37 @@
                 max-width: 300px;
             }
             .info h4 {
-                margin: 0 0 5px;
+                margin: 0 0 0px;
                 color: #555;
-                font-size: 20px;
+                font-size: 40px;
+                margin-bottom: 30px;
+                line-height: 40px;
             }
             .legend {
                 line-height: 20px;
                 color: #555;
+                font-size: 30px;
+                line-height: 50px;
+
             }
             .legend i {
-                width: 18px;
-                height: 18px;
+                width: 50px;
+                height: 50px;
                 float: left;
                 margin-right: 8px;
                 opacity: 0.7;
+                text-align: center;
             }
             .leaflet-popup-content {
                 background-color: rgba(50, 50, 50, .85);
                 color: white;
-                font-size: 1rem;
-                width: 8rem;
-                height: 8rem;
+                font-size: 30px;
+                line-height: 30px;
+
             }
             .leaflet-popup-tip-container {
                 width: 20px;
-                height: 0px;
+                height: 20px;
                 color: rgba(50, 50, 50, .85);
                 margin: 0 auto;
                 position: relative;
@@ -133,9 +139,9 @@
             function onMapClick(e) {
                 L.popup()
                     .setLatLng(e.latlng)
-                    .setContent('Precinct ' + e.target.feature.properties.PRECINCT.toString() +
+                    .setContent('<b>Precinct ' + e.target.feature.properties.PRECINCT.toString() +
                                 ' cast ' + e.target.feature.properties.mbvbm_Bernard.toString() +
-                                ' votes by mail for Bernard')
+                                ' votes by mail for Bernard</b>')
                     .openOn(mymap)
             };
             function highlightFeature(e) {
@@ -200,7 +206,7 @@
                     labels = [];
 
                 // loop through our density intervals and generate a label with a colored square for each interval
-                div.innerHTML += '<h4>Mail-in vote share</h4>'
+                div.innerHTML += '<h4>Mail-in vote share for Bernard</h4>'
                 for (var i = 0; i < grades.length; i++) {
                     div.innerHTML += 
                         '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
