@@ -27,40 +27,12 @@
               z-index: 1;
                 }
           path.leaflet-clickable{stroke-width: .7;}
-          @media (max-width: 625px) {
             .info {
                 padding: 6px 8px;
                 font: 16px/18px Arial, Helvetica, sans-serif;
-                background: white;
-                background: rgba(255,255,255,1);
+                background: rgba(255,255,255,0);
                 box-shadow: 0 0 0px rgba(0,0,0,0.2);
                 border-radius: 5px;
-                max-width: 300px;
-            }
-            .info h4 {
-                margin: 0 0 1rem;
-                color: #555;
-                font-size: 3rem;
-            }
-            .legend {
-                line-height: 20px;
-                color: #555;
-            }
-            .legend i {
-                width: 18px;
-                height: 18px;
-                float: left;
-                margin-right: 8px;
-                opacity: 0.7;
-            }}
-            .info {
-                padding: 6px 8px;
-                font: 16px/18px Arial, Helvetica, sans-serif;
-                background: white;
-                background: rgba(255,255,255,1);
-                box-shadow: 0 0 0px rgba(0,0,0,0.2);
-                border-radius: 5px;
-                max-width: 300px;
             }
             .info h4 {
                 margin: 0 0 0px;
@@ -71,16 +43,17 @@
             }
             .legend {
                 line-height: 20px;
-                color: #555;
+                color: white;
                 font-size: 30px;
                 line-height: 50px;
+                font-weight: 600;
 
             }
             .legend i {
-                width: 50px;
+                width: 200px;
                 height: 50px;
-                float: left;
-                margin-right: 8px;
+                float: right;
+                margin-right: 30px;
                 opacity: 0.7;
                 text-align: center;
             }
@@ -89,12 +62,13 @@
                 color: white;
                 font-size: 30px;
                 line-height: 30px;
+                border: none;
 
             }
             .leaflet-popup-tip-container {
                 width: 20px;
                 height: 20px;
-                color: rgba(50, 50, 50, .85);
+                color: rgba(0,0,0,0);
                 margin: 0 auto;
                 position: relative;
             }
@@ -137,21 +111,32 @@
               }
             L.geoJson(precinctData, {style: style}).addTo(mymap);
             function onMapClick(e) {
+                
                 L.popup()
                     .setLatLng(e.latlng)
                     .setContent('<b>Precinct ' + e.target.feature.properties.PRECINCT.toString() +
                                 ' cast ' + e.target.feature.properties.mbvbm_Bernard.toString() +
                                 ' votes by mail for Bernard</b>')
                     .openOn(mymap)
-            };
+                var layer = e.target;
+                layer.setStyle({
+                  weight: 1,
+                  color: 'white',
+                  dashArray: '',
+                  fillOpacity: .4
+
+            });
+              if (!L.Browser.ie && !L.Browser.opera) {
+                  layer.bringToFront();
+                  }
+              }
             function highlightFeature(e) {
               var layer = e.target;
               info.update(layer.feature.properties);
               layer.setStyle({
-                  weight: 3,
+                  weight: 30,
                   color: 'black',
                   dashArray: '',
-                  fillOpacity: .5
               });
 
 
@@ -166,9 +151,6 @@
               }
             function onEachFeature(feature, layer) {
               layer.on({
-                  mouseover: highlightFeature,
-                  mouseout: resetHighlight,
-                  click: highlightFeature,
                   click: onMapClick
                   });
               }
@@ -197,7 +179,7 @@
               };
               info.addTo(mymap);
               */
-              var legend = L.control({position: 'bottomright'});
+              var legend = L.control({position: 'topright'});
 
               legend.onAdd = function (mymap) {
 
@@ -208,9 +190,16 @@
                 // loop through our density intervals and generate a label with a colored square for each interval
                 div.innerHTML += '<h4>Mail-in vote share for Bernard</h4>'
                 for (var i = 0; i < grades.length; i++) {
-                    div.innerHTML += 
-                        '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '%<br>' : '+');
+                    if (i >= 2 || i == 3) {
+                        div.innerHTML += 
+                            '<i style="color: black;background:' + getColor(grades[i] + 1) +'"> ' +
+                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '%</i><br>' : '+');
+                    }
+                    else {
+                        div.innerHTML += 
+                            '<i style="background:' + getColor(grades[i] + 1) + '"> ' +
+                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '%</i><br>' : '+');
+                    }
                 }
 
                 return div;
