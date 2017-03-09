@@ -16,8 +16,10 @@
         html {
             height: 100%;
         }
- 
-          #mapid{ 
+
+     @media (min-width: 650px) {
+
+        #mapid{ 
               height:100%; 
               width: 100%;
               position: absolute;
@@ -73,6 +75,67 @@
             b {
                 font-size: 24px;
             }
+        }
+        @media (max-width: 600px) {
+ 
+          #mapid{ 
+              height:100%; 
+              width: 100%;
+              position: absolute;
+              float: left;
+              top: 1%;
+              height: 98%;
+              width: 100%;
+              z-index: 1;
+                }
+          path.leaflet-clickable{stroke-width: .7;}
+            .info {
+                padding: 6px 8px;
+                font: 10px/14px Arial, Helvetica, sans-serif;
+                background: rgba(255,255,255,0);
+                box-shadow: 0 0 0px rgba(0,0,0,0.2);
+                border-radius: 5px;
+                float: right;
+                text-align: left;
+                max-width: 200px;
+            }
+            .info p{ 
+                font-size: 14px;
+                line-height: 14px;
+            }
+            .info h4 {
+                margin: 0 0 0px;
+                color: #555;
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 15px;
+                font-weight: 700;
+                text-align: right;
+                font-family: Georgia, Times, "Times New Roman", serif;
+                
+            }
+            .legend {
+                line-height: 20px;
+                color: white;
+                font-size: 15px;
+                font-weight: 600;
+                width: 100px;
+
+
+            }
+            .legend i {
+                width: 100px;
+                height: 80px;
+                margin-left: 5px;
+                opacity: 0.8;
+                text-align: center;
+                border: white;
+
+            }
+            b {
+                font-size: 10px;
+            }
+        }
         </style>
     </head>
     <body>
