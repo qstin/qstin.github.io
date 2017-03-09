@@ -70,22 +70,16 @@
                 margin-left: 0px;
                 opacity: 0.7;
                 text-align: center;
-                font-size: 16px;
+                font-size: 14px;
                 
 
             }
-            div.leaflet-control {
-                background-color: white;
-            }
-            div.legend.leaflet-control {
-                background-color: white;
-                margin-top: -10px;
 
             b {
                 font-size: 24px;
             }
         }
-    @media only screen and (max-width : 500px) {
+    @media only screen and (max-device-width : 500px) {
  
           #mapid{ 
               height:100%; 
@@ -144,15 +138,6 @@
                 font-size: 12px;
 
 
-            }
-            div.leaflet-control {
-                background-color: white;
-                height: 100%;
-            }
-            div.legend.leaflet-control {
-                background-color: white;
-                height: 100%;
-                margin-top: -10px;
             }
             b {
                 font-size: 10px;
@@ -244,12 +229,12 @@
               info.addTo(mymap);
               var legend = L.control({position: 'topright'});
               info.getContainer().addEventListener('mouseover', function () {
-                    map.dragging.disable();
+                    mymap.dragging.disable();
                 });
 
                 // Re-enable dragging when user's cursor leaves the element
                 info.getContainer().addEventListener('mouseout', function () {
-                    map.dragging.enable();
+                    mymap.dragging.enable();
                 });
 
               legend.onAdd = function (mymap) {
