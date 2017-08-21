@@ -10,11 +10,6 @@
         <link rel="stylesheet" type="text/css" href="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.min.css">
         <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
         <style>
-
-                #chart {
-                  height: 300px;
-                  width: 100%;
-                }
                 .ct-label {
                   font-family: helvetica,arial,sans-serif;
                 }
@@ -26,75 +21,84 @@
                   /* Yes! Dashed bars! */
                   
                   } 
-        </style>
+                             
+                  h4 {
+                      font-size: 1rem;
+                      font-family: helvetica,arial,sans-serif;
+                      margin-bottom: 0px;
+                  }
+                  .breaker {
+                      padding-bottom: .3rem;
+                  }
+              </style>
 </head>
     <h4>Ramsey's pay exceeded all other <span style='color:#a6cee3'> foundation executives'</span> compensation.</h4>
     <div class="ct-chart ct-golden-section" id="chart1"></div>
       
 
-    <script>
-        // Initialize a Line chart in the container with the ID chart1
-        new Chartist.Bar('#chart1', {
-            labels: ['Univ. of Louisville', 'Indiana Univ.', 'Univ. of Illinois', 'Ok. State', 'W.V. Univ.'],
-            series: [[1758900, 482179, 584043, 481979, 512183]]
-    
-        },
-        {
-                seriesBarDistance: 30,
-                axisY: {
-                // Lets offset the chart a bit from the labels
-                offset: 60,
-                // The label interpolation function enables you to modify the values
-                // used for the labels on each axis. Here we are converting the
-                // values into million pound.
-                labelInterpolationFnc: function(value) {
-                    if(value === 0){
-                        return value + ' million dollars';
-                    }
-                    else {
-                        return value/1000000;
-                    };
+<script>
+    // Initialize a Line chart in the container with the ID chart1
+    new Chartist.Bar('#chart1', {
+        labels: ['Univ. of Louisville', 'Indiana Univ.', 'Univ. of Illinois', 'Ok. State', 'W.V. Univ.'],
+        series: [[1758900, 482179, 584043, 481979, 512183]]
+  
+    },
+    {
+            seriesBarDistance: 30,
+            axisY: {
+            // Lets offset the chart a bit from the labels
+            offset: 60,
+            // The label interpolation function enables you to modify the values
+            // used for the labels on each axis. Here we are converting the
+            // values into million pound.
+            labelInterpolationFnc: function(value) {
+                if(value === 0){
+                    return value + ' million dollars';
                 }
-            }},
-            
-            [['screen and (min-width: 641px) and (max-width: 1024px)', {
-                seriesBarDistance: 20,
-                axisX: {
-                labelInterpolationFnc: function (value) {
+                else {
+                    return value/1000000;
+                };
+            }
+        }},
+        
+        [['screen and (min-width: 641px) and (max-width: 1024px)', {
+            seriesBarDistance: 20,
+            axisX: {
+            labelInterpolationFnc: function (value) {
+                return value;
+            },
+            showGrid: false
+            }
+        }],
+        ['screen and (max-width: 640px)', {
+            seriesBarDistance: 10,
+            axisX: {
+            labelInterpolationFnc: function (value) {
+                if(value === 'W.V. Univ.') {
+                    return 'WVU';
+                }
+                else if(value === 'Ok. State') {
+                    return 'OSU';
+                }
+                else if(value === 'Univ. of Illinois') {
+                    return 'Ill';
+                }
+                else if(value === 'Indiana Univ.') {
+                    return 'IU';
+                }
+                else if(value == 'Univ. of Louisville') {
+                    return 'U of L';
+                }
+                else {
                     return value;
-                },
-                showGrid: false
                 }
-            }],
-            ['screen and (max-width: 640px)', {
-                seriesBarDistance: 10,
-                axisX: {
-                labelInterpolationFnc: function (value) {
-                    if(value === 'W.V. Univ.') {
-                        return 'WVU';
-                    }
-                    else if(value === 'Ok. State') {
-                        return 'OSU';
-                    }
-                    else if(value === 'Univ. of Illinois') {
-                        return 'Ill';
-                    }
-                    else if(value === 'Indiana Univ.') {
-                        return 'IU';
-                    }
-                    else if(value == 'Univ. of Louisville') {
-                        return 'U of L';
-                    }
-                    else {
-                        return value;
-                    }
-                    
-                }
-                }
-            }]]
-        );
-        </script>
-    </body>
-</html>
+                
+            }
+            }
+        }]]
+    );
+    </script>
+        </body>
+        </html>
 
     
